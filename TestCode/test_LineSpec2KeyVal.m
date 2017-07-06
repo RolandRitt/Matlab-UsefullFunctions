@@ -50,9 +50,8 @@ assert(strcmp(errormsg, 'Wrong Linespec. Color g multible given'), 'wrong error 
 %% Test 5: only one Marker
 
 sol = LineSpec2KeyVal('o');
-assert(strcmp(sol{1}, 'Marker'), 'wrong key for Marker returned');
-
-assert(strcmp(sol{2}, 'o'), 'wrong Marker returned');
+assert(strcmp(sol{3}, 'Marker'), 'wrong key for Marker returned');
+assert(strcmp(sol{4}, 'o'), 'wrong Marker returned');
 
 %% Test 6: no Marker given
 
@@ -104,16 +103,18 @@ assert(strcmp(sol{2}, '-.'), 'wrong Marker returned');
 
 sol = LineSpec2KeyVal('-');
 assert(strcmp(sol{1}, 'LineStyle'), 'wrong key for Marker returned');
-
 assert(strcmp(sol{2}, '-'), 'wrong Marker returned');
+assert(strcmp(sol{3}, 'Marker'), 'wrong key for Marker returned');
+assert(strcmp(sol{4}, 'none'), 'wrong Marker returned');
 
 
 %% Test 12: test . marker
 
 sol = LineSpec2KeyVal('.');
-assert(strcmp(sol{1}, 'Marker'), 'wrong key for Marker returned');
-
-assert(strcmp(sol{2}, '.'), 'wrong Marker returned');
+assert(strcmp(sol{3}, 'Marker'), 'wrong key for Marker returned');
+assert(strcmp(sol{4}, '.'), 'wrong Marker returned');
+assert(strcmp(sol{1}, 'LineStyle'), 'wrong key for LineStyle returned');
+assert(strcmp(sol{2}, 'none'), 'wrong LineStyle returned');
 
 
 %% Test 13: test linespecs

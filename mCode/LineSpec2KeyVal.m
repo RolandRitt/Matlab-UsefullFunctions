@@ -2,7 +2,7 @@ function KeyVals = LineSpec2KeyVal(linespec)
 % linespec, KeyVal,
 %
 % Purpose : extract the LineColor, LineStyle and Marker from a given
-% linespec string
+% linespec string; if linestyle or Marker not given --> default None
 %
 % Syntax :
 %       KeyVals = LineSpec2KeyVal(linespec)
@@ -101,6 +101,9 @@ end
 if ~isempty(LineStyleSpec)
     KeyVals{end+1} = 'LineStyle';
     KeyVals{end+1} = LineStyleSpec;
+else
+    KeyVals{end+1} = 'LineStyle';
+    KeyVals{end+1} = 'none';
 end
 
 
@@ -125,6 +128,9 @@ end
 if ~isempty(MarkerSpec)
     KeyVals{end+1} = 'Marker';
     KeyVals{end+1} = MarkerSpec;
+else
+    KeyVals{end+1} = 'Marker';
+    KeyVals{end+1} = 'none';
 end
 
 
