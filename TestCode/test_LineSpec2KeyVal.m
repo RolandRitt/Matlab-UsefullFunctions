@@ -20,7 +20,7 @@
 %% Test 1: only one Color
 
 sol = LineSpec2KeyVal('g');
-assert(strcmp(sol{1}, 'LineColor'), 'wrong key for Line Color returned');
+assert(strcmp(sol{1}, 'Color'), 'wrong key for Line Color returned');
 
 assert(strcmp(sol{2}, 'g'), 'wrong color returned');
 
@@ -128,7 +128,7 @@ assert(strcmp(sol{4}, '.'), 'wrong Marker returned');
 %% Test 14: test linespecs
 
 sol = LineSpec2KeyVal('.-.g');
-assert(strcmp(sol{1}, 'LineColor'), 'wrong key for LineColor returned');
+assert(strcmp(sol{1}, 'Color'), 'wrong key for Color returned');
 assert(strcmp(sol{2}, 'g'), 'wrong Color returned');
 assert(strcmp(sol{3}, 'LineStyle'), 'wrong key for LineStyle returned');
 assert(strcmp(sol{4}, '-.'), 'wrong LineStyle returned');
@@ -138,7 +138,7 @@ assert(strcmp(sol{6}, '.'), 'wrong Marker returned');
 %% Test 15: test linespecs
 
 sol = LineSpec2KeyVal('-..g');
-assert(strcmp(sol{1}, 'LineColor'), 'wrong key for LineColor returned');
+assert(strcmp(sol{1}, 'Color'), 'wrong key for Color returned');
 assert(strcmp(sol{2}, 'g'), 'wrong Color returned');
 assert(strcmp(sol{3}, 'LineStyle'), 'wrong key for LineStyle returned');
 assert(strcmp(sol{4}, '-.'), 'wrong LineStyle returned');

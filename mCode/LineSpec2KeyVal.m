@@ -75,7 +75,7 @@ for col=colors
 end
 
 if ~isempty(colsSpec)
-    KeyVals{end+1} = 'LineColor';
+    KeyVals{end+1} = 'Color';
     KeyVals{end+1} = colsSpec;
 end
 
