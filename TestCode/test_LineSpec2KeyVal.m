@@ -146,3 +146,8 @@ assert(strcmp(sol{5}, 'Marker'), 'wrong key for Marker returned');
 assert(strcmp(sol{6}, '.'), 'wrong Marker returned');
 
 
+%% Test 16: test add Default
+
+sol = LineSpec2KeyVal('o', false);
+assert(strcmp(sol{1}, 'Marker'), 'wrong key for Marker returned');
+assert(strcmp(sol{2}, 'o'), 'wrong Marker returned');

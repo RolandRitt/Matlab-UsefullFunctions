@@ -1,4 +1,4 @@
-function KeyVals = LineSpec2KeyVal(linespec)
+function KeyVals = LineSpec2KeyVal(linespec, addDefault)
 % linespec, KeyVal,
 %
 % Purpose : extract the LineColor, LineStyle and Marker from a given
@@ -6,9 +6,12 @@ function KeyVals = LineSpec2KeyVal(linespec)
 %
 % Syntax :
 %       KeyVals = LineSpec2KeyVal(linespec)
+%       KeyVals = LineSpec2KeyVal(linespec, addDefault)
 %
 % Input Parameters :
 %       linespec := string which defines a linespec
+%       addDefault := boolean if default values should be added (default ==
+%       true)
 %
 % Return Parameters :
 %       KeyVals := a cell array containing Key and value for the extracted
@@ -44,6 +47,11 @@ function KeyVals = LineSpec2KeyVal(linespec)
 % --------------------------------------------------
 %
 %%
+
+%% check input arguments
+if nargin<2
+    addDefault = true;
+end
 
 %% define possible options
 colors = {'b', 'g', 'r', 'c', 'm', 'y', 'k', 'w'};
@@ -102,8 +110,10 @@ if ~isempty(LineStyleSpec)
     KeyVals{end+1} = 'LineStyle';
     KeyVals{end+1} = LineStyleSpec;
 else
-    KeyVals{end+1} = 'LineStyle';
-    KeyVals{end+1} = 'none';
+    if addDefault
+        KeyVals{end+1} = 'LineStyle';
+        KeyVals{end+1} = 'none';
+    end
 end
 
 
@@ -129,8 +139,10 @@ if ~isempty(MarkerSpec)
     KeyVals{end+1} = 'Marker';
     KeyVals{end+1} = MarkerSpec;
 else
-    KeyVals{end+1} = 'Marker';
-    KeyVals{end+1} = 'none';
+    if addDefault
+        KeyVals{end+1} = 'Marker';
+        KeyVals{end+1} = 'none';
+    end
 end
 
 
