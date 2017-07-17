@@ -18,4 +18,5 @@
 %%
 
 runtests('test_LineSpec2KeyVal.m');
+runtests('test_datetimeLast.m');
 
